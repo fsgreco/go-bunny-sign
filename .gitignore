@@ -1,0 +1,25 @@
+# System files
+.env
+.DS_Store
+.directory
+node_modules
+vendor
+dist 
+
+# Cache &misc files 
+cache
+logs
+*.test
+*.prof
+*.swp
+*.swo
+*~
+*.bench
+*.debug
+
+# CUSTOM USER CONFIG VSCODE
+#.vscode/settings.json
+#*.code-workspace
+
+## Docker 
+*.override.yml
