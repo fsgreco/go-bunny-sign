@@ -10,13 +10,16 @@ import (
 
 type CLIConfig struct {
 	Clear bool
+	Debug bool
 }
 
 func parseFlags() CLIConfig {
 	clear := flag.Bool("c", false, "Clear the bunny after showing the message")
+	debug := flag.Bool("debug", false, "Debug CLI features")
 	flag.Parse()
 	return CLIConfig{
 		Clear: *clear,
+		Debug: *debug,
 	}
 }
 
@@ -31,13 +34,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println()
-	fmt.Println("DEBUG - this line should remain")
+	if config.Debug {
+		fmt.Println()
+		fmt.Println("DEBUG - this line should remain")
+	}
 	fmt.Println()
 
 	options := bunnysign.Options{Persist: !config.Clear}
 
 	bunnysign.Display(phrases, options)
-
-	fmt.Println()
 }
