@@ -40,7 +40,5 @@ func main() {
 	}
 	fmt.Println()
 
-	options := bunnysign.Options{Persist: !config.Clear}
-
-	bunnysign.Display(phrases, options)
+	bunnysign.Display(phrases, !config.Clear)
 }

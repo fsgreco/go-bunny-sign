@@ -7,11 +7,7 @@ import (
 	"github.com/fsgreco/go-bunny-sign/logupdate"
 )
 
-type Options struct {
-	Persist bool
-}
-
-func Display(phrases []string, options Options) {
+func Display(phrases []string, persist bool) {
 	render := logupdate.CreatePlayer(Generate)
 
 	for indxPhrase, phrase := range phrases {
@@ -33,7 +29,7 @@ func Display(phrases []string, options Options) {
 				time.Sleep(800 * time.Millisecond)
 			}
 			isLastFrame := isLastPhrase && isLastWord
-			if isLastFrame && !options.Persist {
+			if isLastFrame && !persist {
 				// when using the CLI -c flag will set Persist to false
 				logupdate.ClearLines(lines)
 			}
