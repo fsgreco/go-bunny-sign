@@ -17,8 +17,8 @@ func main() {
 
 	phrases := os.Args[1:]
 
-	fmt.Println()
-	fmt.Println("DEBUG - this line should remain")
+	// fmt.Println()
+	// fmt.Println("DEBUG - this line should remain")
 	fmt.Println()
 
 	bunnysign.Display(phrases)
