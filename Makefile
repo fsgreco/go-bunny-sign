@@ -1,4 +1,4 @@
-.PHONY: build clean install #test
+.PHONY: build clean install test
 
 build:
 	go build -o bin/bunnysign ./cmd/bunnysign
@@ -9,10 +9,7 @@ clean:
 install:
 	go install ./cmd/bunnysign
 
-#test:
-#	go test ./...
-
-run:
-	go run ./cmd/bunnysign
+test:
+	go run ./cmd/bunnysign "Hello from make!"
 
 .DEFAULT_GOAL := build
