@@ -1,18 +1,18 @@
 .PHONY: build clean install #test
 
 build:
-    go build -o bin/bunnysign ./cmd/bunny-sign
+	go build -o bin/bunnysign ./cmd/bunnysign
 
 clean:
-    rm -rf bin/
+	rm -rf bin/
 
 install:
-    go install ./cmd/bunny-sign
+	go install ./cmd/bunnysign
 
 #test:
-#    go test ./...
+#	go test ./...
 
 run:
-    go run ./cmd/bunny-sign
+	go run ./cmd/bunnysign
 
 .DEFAULT_GOAL := build

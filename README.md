@@ -3,11 +3,11 @@
 This Go package lets you display animated messages with an adorable bunny holding a sign. Because, why not?
 
 ```
- |￣￣￣￣￣￣￣￣￣￣￣|
+ |￣￣￣￣￣￣￣￣￣￣￣￣￣|
     Hey kids! Don't 
     you want a bunny 
     for your terminal?
- |＿＿＿＿＿＿＿＿＿＿＿|
+ |＿＿＿＿＿＿＿＿＿＿＿＿＿|
    (\__/) ||
    (•ㅅ•) ||
    /    づ
@@ -36,16 +36,15 @@ go get github.com/fsgreco/go-bunny-sign
 ### As a CLI Tool
 
 ```bash
-go install github.com/fsgreco/go-bunny-sign/cmd/bunny-sign@latest
+go install github.com/fsgreco/go-bunny-sign/cmd/bunnysign@latest
 ```
 
 ## Usage
 
 ### Command Line
-# TODO 
 ```bash
 # After installing with go install
-bunny-sign "Hello, World!"
+bunnysign "Hello, World!"
 
 # Multiple messages
 bunnysign "First message" "Second message"
@@ -82,14 +81,14 @@ git clone https://github.com/fsgreco/go-bunny-sign.git
 cd go-bunny-sign
 
 # Build the CLI binary
-go build -o bin/bunnysign ./cmd/bunny-sign
+go build -o bin/bunnysign ./cmd/bunnysign
 # OR use make if you have it: `make build`
 
 # Run the binary
 bin/bunnysign "Hello, Friend!"
 
 # TODO Or install locally
-# go install ./cmd/bunny-sign
+# go install ./cmd/bunnysign
 ```
 
 ## Contributing
