@@ -1,3 +1,4 @@
+// Provides an animated messages for terminal applications displaying a bunny holding a sign.
 package bunnysign
 
 import (
@@ -7,6 +8,8 @@ import (
 	"github.com/fsgreco/go-bunny-sign/logupdate"
 )
 
+// Take a slice of phrases and displays them word by word with animation.
+// The persist parameter controls whether the final message remains on screen.
 func Display(phrases []string, persist bool) {
 	render := logupdate.CreatePlayer(Generate)
 
@@ -37,6 +40,8 @@ func Display(phrases []string, persist bool) {
 	}
 }
 
+// Creates a bunny sign ASCII art with the given message.
+// Returns a formatted string with the message already wrapped by the sign.
 func Generate(message string) string {
 	padding := strings.Repeat(" ", 4)
 
@@ -52,6 +57,8 @@ func Generate(message string) string {
 	return strings.Join(sign, "\n")
 }
 
+// Wraps text to fit within the bunny sign with proper padding.
+// It handles line breaks and ensures text fits within the specified maxLength.
 func wrapText(phrase string, padding string, maxLength int) string {
 	if maxLength == 0 {
 		maxLength = 18
