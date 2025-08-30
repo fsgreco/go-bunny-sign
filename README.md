@@ -111,6 +111,27 @@ Pull requests are welcome! Just ensure no bunnies are harmed during the process.
 4. Commit and push the branch 
 5. Open a Pull Request.
 
+
+## Next Steps (ideally)
+
+### Testing & Quality Assurance
+- [ ] **Add unit tests**  
+- [ ] **Set up golangci-lint** with `.golangci.yml` configuration
+
+### CI/CD & Automation
+- [ ] **GitHub Actions workflow** Once tests are in place enable `ci.yml` 
+- [x] **Automated releases** with cross-platform binaries
+
+
+### Documentation & Standards
+- [ ] **Study how godoc comments wok** 
+- [ ] **Create `CONTRIBUTING.md`** and move the section
+- [ ] **Improve .gitignore**  
+
+### Project Structure Improvements
+- [ ] **Add pkg/ folder** or rename `bunnysign` pkg 
+- [ ] **Improve error handling** with proper error wrapping
+
 ## License
 
 MIT
