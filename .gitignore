@@ -42,4 +42,5 @@ go.work
 
 # Build artifacts
 dist/
+bin/
 bunny-sign

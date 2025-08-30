@@ -1,21 +1,22 @@
 # 🐰 Animated bunny sign for your terminal (Go version)
 
-This Go package lets you display animated messages with an adorable bunny holding a sign. Because why not?
+This Go package lets you display animated messages with an adorable bunny holding a sign. Because, why not?
 
 ```
  |￣￣￣￣￣￣￣￣￣￣￣|
-    Hey, kids!
-    don't you want 
-    a bunny for your 
-    terminal?
+    Hey kids! Don't 
+    you want a bunny 
+    for your terminal?
  |＿＿＿＿＿＿＿＿＿＿＿|
    (\__/) ||
    (•ㅅ•) ||
    /    づ
 ```
+> [!NOTE]
+> This project has been done for educational purposes, it's my first Go package.
+>
+> It is actually the Go porting of the original [bunny-sign](https://github.com/fsgreco/bunny-sign) JavaScript package.
 
-This project has been done for educational purposes, it's my first Go package, so expect some rough edges.
-It is actually the Go port of the original [bunny-sign](https://github.com/fsgreco/bunny-sign) JavaScript package.
 
 ### Use Cases
 
@@ -26,24 +27,31 @@ It is actually the Go port of the original [bunny-sign](https://github.com/fsgre
 
 ## Installation
 
+### As a Library
+
 ```bash
 go get github.com/fsgreco/go-bunny-sign
+```
+
+### As a CLI Tool
+
+```bash
+go install github.com/fsgreco/go-bunny-sign/cmd/bunny-sign@latest
 ```
 
 ## Usage
 
 ### Command Line
-
+# TODO 
 ```bash
-# Build and run
-go build -o bunny-sign
-./bunny-sign "Hello, World!"
-
-# Or run directly
-go run main.go "Hello, World!"
+# After installing with go install
+bunny-sign "Hello, World!"
 
 # Multiple messages
-go run main.go "First message" "Second message"
+bunnysign "First message" "Second message"
+
+# Clear after display
+bunnysign -c "This message will disappear"
 ```
 
 ### In Your Go Code
@@ -54,16 +62,15 @@ Import the package and use it in your applications:
 package main
 
 import (
-    "github.com/fsgreco/go-bunny-sign/bunnysign"
+	"github.com/fsgreco/go-bunny-sign/bunnysign"
 )
 
 func main() {
-    
-    // Show multiple messages in sequence
-    messages := []string{"First message", "Then this one", "And finally this"}
 
-    bunnysign.Display(messages, true) // pass false if you want to clear also the last message
+	// Show multiple messages in sequence
+	messages := []string{"First message", "Then this one", "And finally this"}
 
+	bunnysign.Display(messages, true) // pass false if you want to clear also the last message
 }
 ```
 
@@ -74,8 +81,15 @@ func main() {
 git clone https://github.com/fsgreco/go-bunny-sign.git
 cd go-bunny-sign
 
-# Build the binary
-go build -o bunny-sign
+# Build the CLI binary
+go build -o bin/bunnysign ./cmd/bunny-sign
+# OR use make if you have it: `make build`
+
+# Run the binary
+bin/bunnysign "Hello, Friend!"
+
+# TODO Or install locally
+# go install ./cmd/bunny-sign
 ```
 
 ## Contributing
