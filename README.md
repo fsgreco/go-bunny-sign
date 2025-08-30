@@ -97,8 +97,8 @@ go build -o bin/bunnysign ./cmd/bunnysign
 # Run the binary
 bin/bunnysign "Hello, Friend!"
 
-# TODO Or install locally
-# go install ./cmd/bunnysign
+# Or install locally
+go install ./cmd/bunnysign
 ```
 
 ## Contributing
@@ -107,11 +107,9 @@ Pull requests are welcome! Just ensure no bunnies are harmed during the process.
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Add tests if applicable
-5. Commit your changes (`git commit -m 'Add some amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request.
+3. Make your changes (Add tests if applicable)
+4. Commit and push the branch 
+5. Open a Pull Request.
 
 ## License
 
