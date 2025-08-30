@@ -1,0 +1,36 @@
+name: CI
+
+# Disabled until tests are implemented
+# Uncomment the lines below when tests are ready
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+
+# Alternative: you can also disable by commenting out the entire 'on' section
+# and using a manual trigger only when you want to test:
+on:
+  workflow_dispatch: # Allows manual triggering from GitHub UI
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.24'
+    
+    - name: Run tests
+      run: go test ./...
+    
+    - name: Build CLI
+      run: go build ./cmd/bunnysign
+    
+    - name: Test CLI runs
+      run: |
+        ./bunnysign "CI Test Message"
