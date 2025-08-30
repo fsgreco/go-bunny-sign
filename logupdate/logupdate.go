@@ -1,3 +1,5 @@
+// Provides utilities for animating the terminal.
+// It handles clearing previous lines and update the output in place generating display effects.
 package logupdate
 
 import (
@@ -7,6 +9,9 @@ import (
 	"time"
 )
 
+// CreatePlayer is a HOF: creates an animation player function that manages frame updates.
+// It takes the FrameGenerator function and returns another function that displays the animated content.
+// Thjis returned function handles clearing previous frames and displaying new ones with timing.
 func CreatePlayer(FrameGenerator func(content string) string) func(content string) int {
 	previousFrameLines := 0
 
@@ -26,7 +31,7 @@ func CreatePlayer(FrameGenerator func(content string) string) func(content strin
 	}
 }
 
-// Clears the last n lines from the terminal.
+// ClearLines clears the last n lines from the terminal.
 // n is the number of lines to clear.
 // Note: This function assumes the terminal supports ANSI escape codes.
 func ClearLines(n int) {
