@@ -116,7 +116,7 @@ Pull requests are welcome! Just ensure no bunnies are harmed during the process.
 
 ### Testing & Quality Assurance
 - [ ] **Add unit tests**  
-- [ ] **Set up golangci-lint** with `.golangci.yml` configuration
+- [x] **Set up golangci-lint** with `.golangci.yml` configuration
 
 ### CI/CD & Automation
 - [ ] **GitHub Actions workflow** Once tests are in place enable `ci.yml` 
