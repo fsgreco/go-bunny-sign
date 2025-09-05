@@ -14,17 +14,16 @@ type CLIConfig struct {
 }
 
 func parseFlags() CLIConfig {
-	clear := flag.Bool("c", false, "Clear the bunny after showing the message")
+	clearLastFrame := flag.Bool("c", false, "Clear the bunny after showing the message")
 	debug := flag.Bool("debug", false, "Debug CLI features")
 	flag.Parse()
 	return CLIConfig{
-		Clear: *clear,
+		Clear: *clearLastFrame,
 		Debug: *debug,
 	}
 }
 
 func main() {
-
 	config := parseFlags()
 
 	phrases := flag.Args() // os.Args[1:]

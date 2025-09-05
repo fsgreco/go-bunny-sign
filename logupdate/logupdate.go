@@ -12,7 +12,7 @@ import (
 // CreatePlayer is a HOF: creates an animation player function that manages frame updates.
 // It takes the FrameGenerator function and returns another function that displays the animated content.
 // Thjis returned function handles clearing previous frames and displaying new ones with timing.
-func CreatePlayer(FrameGenerator func(content string) string) func(content string) int {
+func CreatePlayer(frameGenerator func(content string) string) func(content string) int {
 	previousFrameLines := 0
 
 	return func(content string) int {
@@ -20,11 +20,12 @@ func CreatePlayer(FrameGenerator func(content string) string) func(content strin
 			ClearLines(previousFrameLines)
 		}
 		// print the frame
-		frame := FrameGenerator(content)
+		frame := frameGenerator(content)
 		fmt.Printf("%s\n", frame)
 
 		previousFrameLines = strings.Count(frame, "\n") + 1
 		// wait random to print the new frame
+		//nolint:gosec
 		time.Sleep(time.Duration(rand.Intn(300)+100) * time.Millisecond)
 
 		return previousFrameLines
